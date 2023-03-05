@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Video = ({imgUrl,title}) => {
+const Video = ({imgUrl,title,channelName,uploadDate}) => {
     
   return (
     <Container>
@@ -9,11 +9,11 @@ const Video = ({imgUrl,title}) => {
             <img src={imgUrl} alt='' />
         </div>
         <div className='heading'>
-            <span>CL</span>
-            <h3>{title}</h3>
+            <span></span>
+            <h5>{title}</h5>
         </div>
-            <p>channel name</p>
-            <p>views and time</p>
+            <p>{channelName}</p>
+            <p>{uploadDate} </p>
     </Container>
 
   )
@@ -21,8 +21,8 @@ const Video = ({imgUrl,title}) => {
 
 const Container = styled.div`
 /* background-color: wheat; */
-border: 1px solid white;
-margin: 10px;
+/* border: 1px solid white; */
+margin: 40px 0;
 height: 225px;
 width: 336px;
 
@@ -33,18 +33,25 @@ width: 336px;
         height: 180px;
         object-fit: cover;
         width: 100%;
-        border-radius: 10px;
+        border-radius: 20px;
     }
 }
 .heading{
     display: flex;
     justify-content: space-between;
-    margin: 5px;
+    align-items: center;
+    margin: 5px 0;
+    width: 100%;
     span{
         height: 50px;
         width: 50px;
         border-radius: 50%;
         background-color: whitesmoke;
+        /* padding: 0 5px; */
+        /* margin: 0 5px; */
+    }
+    h5{
+        width:250px;
     }
 }
 `

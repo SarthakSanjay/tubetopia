@@ -34,7 +34,9 @@ const Home = () => {
             const {snippet} = obj
             let imgUrl = snippet.thumbnails.high.url
             let title = snippet.title
-            return <Video title={title} imgUrl={imgUrl} key={index}/> 
+            let channelName = snippet.channelTitle
+            let uploadDate= snippet.publishTime
+            return <Video title={title} channelName={channelName} uploadDate={uploadDate} imgUrl={imgUrl} key={index}/> 
         })
     }
         
