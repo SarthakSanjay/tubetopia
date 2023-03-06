@@ -16,7 +16,7 @@ const Home = () => {
    
 
         const fetchData = async () => {
-            const url = "https://youtube-v31.p.rapidapi.com/search?relatedToVideoId=7ghhRHRP6t4&part=id%2Csnippet&type=video&maxResults=50"
+            const url = "https://youtube-v31.p.rapidapi.com/search?q=money&part=snippet%2Cid&regionCode=US&maxResults=50&order=date"
             const data = await fetch(url , options)
             const fetchedData = await data.json()
             setData(fetchedData.items)
