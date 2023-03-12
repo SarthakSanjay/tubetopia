@@ -34,14 +34,16 @@ h1{
 }
 
 input {
-    height: 20px;
+    height: 40px;
     width: 300px;
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-}
-button{
-    height: 20px;
+    padding: 0px 10px;
+  }
+  button{
+  padding: 0px 10px;
+    height: 40px;
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
