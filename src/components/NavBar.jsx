@@ -1,18 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { createContext } from 'react'
+import Home from './Home'
+
+const NavData = createContext()
 
 const NavBar = () => {
+    const handleClick = (value) => {
+        return value
+      };
+      
   return (
     <Container>
-        <ul className='items'>
-            <li>Home</li>
-            <li>Sports</li>
-            <li>News</li>
-            <li>Music</li>
-            <li>Movie</li>
-            <li>Gaming</li>
-            <li>Vlogs</li>
-        </ul>
+       <NavData.Provider value={handleClick}>
+        <Home />
+       </NavData.Provider>
+       <ul className='items'>
+        <li onClick={() => handleClick('Home')}>Home</li>
+        <li onClick={() => handleClick('Sports')}>Sports</li>
+        <li onClick={() => handleClick('News')}>News</li>
+        <li onClick={() => handleClick('Music')}>Music</li>
+        <li onClick={() => handleClick('Movie')}>Movie</li>
+        <li onClick={() => handleClick('Gaming')}>Gaming</li>
+        <li onClick={() => handleClick('Vlogs')}>Vlogs</li>
+      </ul>
     </Container>
   )
 }
@@ -44,3 +55,4 @@ const Container = styled.div`
 
 `
 export default NavBar
+export {NavData}
