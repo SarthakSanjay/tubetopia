@@ -29,6 +29,15 @@ const Container = styled.div`
         align-items: center;
         li{
             list-style: none;
+            height:40px ;
+            width: 70px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li:hover{
+            background-color: red;
         }
     }
 
