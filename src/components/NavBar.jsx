@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { createContext } from 'react'
-import Home from './Home'
 
-const NavData = createContext()
 
 const NavBar = () => {
-    const handleClick = (value) => {
+    
+      const handleClick = (value) => {
         return value
-      };
-      
+
+      }
   return (
     <Container>
-       <NavData.Provider value={handleClick}>
-        <Home />
-       </NavData.Provider>
        <ul className='items'>
         <li onClick={() => handleClick('Home')}>Home</li>
         <li onClick={() => handleClick('Sports')}>Sports</li>
@@ -55,4 +50,3 @@ const Container = styled.div`
 
 `
 export default NavBar
-export {NavData}

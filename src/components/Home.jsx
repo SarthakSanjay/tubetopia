@@ -2,8 +2,7 @@ import React ,{useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Video from './Video'
 import fetchData from './fetchApiData.js'
-import na
-import { NavData } from './NavBar'
+
 const Home = () => {
     const [data , setData] = useState([])
 
@@ -31,7 +30,7 @@ const Home = () => {
         
         useEffect(() => {
             const fetchVideos = async () => {
-              const data = await fetchData(navData);
+              const data = await fetchData("recommended");
               setData(data);
             };
             fetchVideos();
@@ -39,11 +38,7 @@ const Home = () => {
 
   return (
     <Container>
-    <NavData.Consumer>
-          {(fname) => {
-            return <h1>My NavData is {fname}</h1>;
-          }}
-        </NavData.Consumer>
+
     {
         data.map((obj , index)=>{
             const {snippet} = obj
@@ -53,6 +48,7 @@ const Home = () => {
             let uploadDate= snippet.publishTime
             return <Video title={title} channelName={channelName} uploadDate={uploadDate} imgUrl={imgUrl} key={index}/> 
         })
+
     }
         
     </Container>

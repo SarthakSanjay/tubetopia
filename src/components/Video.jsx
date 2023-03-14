@@ -43,8 +43,8 @@ width: 336px;
     margin: 5px 0;
     width: 100%;
     span{
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
         background-color: whitesmoke;
         /* padding: 0 5px; */
