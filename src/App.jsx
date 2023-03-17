@@ -3,6 +3,7 @@ import './App.css'
 import SearchBar from './components/SearchBar'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
+import Hero from './components/Hero'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
       {/* <SearchBar />
       <NavBar />
       <Home /> */}
-      <div className='grid'>
+      {/* <div className='grid'>
         <div className='box' id='navbar'>
           <NavBar />
         </div>
@@ -23,7 +24,8 @@ function App() {
             <Home />
           </div>
         </div>
-      </div>
+      </div> */}
+      <Hero />
     </div>
   )
 }
