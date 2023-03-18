@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import SearchBar from './components/SearchBar'
-import NavBar from './components/NavBar'
-import Home from './components/Home'
+import Component1 from './components/Component1'
+import Component2 from './components/Component2'
 import Hero from './components/Hero'
 
 function App() {
@@ -25,7 +24,11 @@ function App() {
           </div>
         </div>
       </div> */}
-      <Hero />
+      {/* <Hero /> */}
+
+<Component1 />
+<Component2 />
+      
     </div>
   )
 }

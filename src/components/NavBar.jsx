@@ -4,8 +4,10 @@ import styled from 'styled-components'
 
 const NavBar = () => {
     
+  // const [NavData , setNavData] = useState("")
       const handleClick = (value) => {
-        return value
+        setNavData(value)
+        // return value
 
       }
   return (
@@ -23,9 +25,10 @@ const NavBar = () => {
   )
 }
 const Container = styled.div`
-    height: 100%;
-    width: 100%;
-    /* position: fixed; */
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    background-color:red;
 
     ul{
         display: flex;

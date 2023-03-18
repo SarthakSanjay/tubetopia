@@ -19,11 +19,14 @@ const SearchBar = () => {
 }
 
 const Container = styled.div`
-display: flex;
+/* isplay: flex;
 justify-content: space-between;
-align-items: center;
-height: 100%;
+align-items: center;d */
+/* height: 50px; */
+
+position: fixed;
 width: 100%;
+grid-row: 1/2;
 
 h1{
     color: orangered;

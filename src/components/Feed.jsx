@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Video from './Video'
 import fetchData from './fetchApiData.js'
 
-const Home = () => {
+const Feed = () => {
     const [data , setData] = useState([])
 
     // const options = {
@@ -30,7 +30,7 @@ const Home = () => {
         
         useEffect(() => {
             const fetchVideos = async () => {
-              const data = await fetchData("recommended");
+              const data = await fetchData("cute");
               setData(data);
             };
             fetchVideos();
@@ -60,13 +60,14 @@ const Container = styled.div`
 min-height: 100%;
 height: 100%;
 width: 100%;
-/* background-color: green; */
+background-color: green;
 margin: 0;
 padding: 0;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
+grid-column: 2/3;
 `
 
 
-export default Home
+export default Feed
