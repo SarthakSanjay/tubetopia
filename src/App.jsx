@@ -1,33 +1,28 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
-import Component1 from './components/Component1'
-import Component2 from './components/Component2'
-import Hero from './components/Hero'
+import Feed from './components/Feed'
+import SearchBar from './components/SearchBar'
+import SideBar from './components/SideBar'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <div className="App">
-      {/* <SearchBar />
-      <NavBar />
-      <Home /> */}
-      {/* <div className='grid'>
-        <div className='box' id='navbar'>
-          <NavBar />
+       <div className='searchbar'>
+        <SearchBar />
+       </div>
+       <div className='hero'>
+        <div className='navbar'>
+          <SideBar />
         </div>
-        <div className='content'>
-          <div className='box' id='searchbar'>
-            <SearchBar />
-          </div>
-          <div className='box' id='home'>
-            <Home />
-          </div>
-        </div>
-      </div> */}
-      {/* <Hero /> */}
-
-<Component1 />
-<Component2 />
+        <BrowserRouter>
+          <Routes>
+            <Route exact path='/' element={<Feed category='' />} />
+            <Route exact path='/search?q=sports&part=snippet%2Cid&regionCode=US&maxResults=50&order=date' element={<Feed category='sports' />} />
+          </Routes>
+        </BrowserRouter>
+       </div>
       
     </div>
   )

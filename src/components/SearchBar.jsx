@@ -1,36 +1,38 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const SearchBar = () => {
-    const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
-    const handleChange = (event) => {
-      setInputValue(event.target.value);
-    };
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
     <Container>
-        <h1>&#123; TubeTopia &#125;</h1>
-        <div className='searchbox'>
+      <h1>&#123; TubeTopia &#125;</h1>
+      <div className='searchbox'>
         <input placeholder='search' value={inputValue} onChange={handleChange} />
         <button> search</button>
-        </div>
+      </div>
     </Container>
   )
 }
 
 const Container = styled.div`
-/* isplay: flex;
+display: flex;
 justify-content: space-between;
-align-items: center;d */
-/* height: 50px; */
-
+align-items: center;
+height: 80px;
 position: fixed;
+background-color: #252525;
+top: 0;
 width: 100%;
-grid-row: 1/2;
+/* border:2px solid red; */
+border-bottom: 1px solid gray;
 
 h1{
-    color: orangered;
     margin-left:20px ;
+    color: blueviolet;
 }
 .searchbox{
     margin-right:20px ;
@@ -50,7 +52,7 @@ input {
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: orangered;
+    background-color: blueviolet;
     color: white;
 }
 

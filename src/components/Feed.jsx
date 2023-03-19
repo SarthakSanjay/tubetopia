@@ -3,34 +3,13 @@ import styled from 'styled-components'
 import Video from './Video'
 import fetchData from './fetchApiData.js'
 
-const Feed = () => {
+const Feed = (props) => {
     const [data , setData] = useState([])
 
-    // const options = {
-    //     method: 'GET',
-    //     headers: {
-    //         'X-RapidAPI-Key': 'ca219d3c12msh6b4192730914a09p11cebcjsn49ce952dd1b5',
-    //         'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
-    //     }
-    // };
     
-   
-
-    //     const fetchData = async () => {
-    //         const url = "https://youtube-v31.p.rapidapi.com/search?q=trending&part=snippet%2Cid&regionCode=US&maxResults=50&order=date"
-    //         const data = await fetch(url , options)
-    //         const fetchedData = await data.json()
-    //         setData(fetchedData.items)
-    //         // console.log(fetchedData.items)
-    //     }
-
-        // useEffect(()=>{
-        //    setData(fetchData("trending"))
-        // },[])
-        
         useEffect(() => {
             const fetchVideos = async () => {
-              const data = await fetchData("cute");
+              const data = await fetchData(props.category);
               setData(data);
             };
             fetchVideos();
@@ -60,13 +39,14 @@ const Container = styled.div`
 min-height: 100%;
 height: 100%;
 width: 100%;
-background-color: green;
 margin: 0;
+background-color: #252525;
 padding: 0;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
 grid-column: 2/3;
+/* border: 2px solid blueviolet; */
 `
 
 

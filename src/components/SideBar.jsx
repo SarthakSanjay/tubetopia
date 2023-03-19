@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-
-const NavBar = () => {
+const SideBar = () => {
     
   // const [NavData , setNavData] = useState("")
       const handleClick = (value) => {
@@ -14,7 +14,10 @@ const NavBar = () => {
     <Container>
        <ul className='items'>
         <li onClick={() => handleClick('Home')}>Home</li>
-        <li onClick={() => handleClick('Sports')}>Sports</li>
+        {/* <li>Sports</li> */}
+        <li className="nav-item" >
+          <Link  aria-current="page" to="/search?q=sports&part=snippet%2Cid&regionCode=US&maxResults=50&order=date">Sports</Link>
+        </li>
         <li onClick={() => handleClick('News')}>News</li>
         <li onClick={() => handleClick('Music')}>Music</li>
         <li onClick={() => handleClick('Movie')}>Movie</li>
@@ -25,18 +28,20 @@ const NavBar = () => {
   )
 }
 const Container = styled.div`
-    height: 100vh;
-    width: 200px;
+    height: 100%;
+    width: 150px;
     position: fixed;
-    background-color:red;
-
+    background-color: #252525;
+    border-right: 1px solid gray;
     ul{
         display: flex;
         height: 100%;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
+        /* border: 2px solid wheat; */
         li{
+          /* border: 2px solid wheat; */
             list-style: none;
             height:40px ;
             width: 70px;
@@ -44,12 +49,14 @@ const Container = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            color: blueviolet;
         }
         li:hover{
-            background-color: red;
+            background-color: blueviolet;
+            color: white;
         }
     }
 
 
 `
-export default NavBar
+export default SideBar
